@@ -13,7 +13,6 @@
         <input type="text" name="nombre" id="nombre" placeholder="ingresa nom">
         <label for="ola">apellido</label>
         <input type="text" name="apellido" id="apellido" placeholder="ingresa ap." >
-
         <input type="submit" value="Submit">
     </form>
 </footer>

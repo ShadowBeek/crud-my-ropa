@@ -1,11 +1,12 @@
 <?php
-require 'conexion.php';
+// solicita variable con la conexion
+require 'conexion.php'; //$mysqli
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 
 
-$query = "insert into nom values(?, ?)";
+$query = "insert into nom(name, apellido) values(?, ?)";
 
 
 if ($stmt = $mysqli->prepare($query)) {
@@ -14,6 +15,8 @@ if ($stmt = $mysqli->prepare($query)) {
 
   printf("rows inserted: %d\n", $stmt->affected_rows);
   $stmt->close();
+  $mysqli->close();
+  header("Location: ../index.php");
 }
 
 ?>
